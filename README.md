@@ -86,6 +86,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://(link_do_seu_data_base)/(nome_do_data_base_criado_anteriormente)
 spring.datasource.username=(seu_user)
 spring.datasource.password=(sua_senha)
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
   # Abra a classe (Application.java):
   ( src/main/java -> br.com.supera.game.store -> Application.java )

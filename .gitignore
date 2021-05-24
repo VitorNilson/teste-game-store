@@ -1,5 +1,6 @@
 *.txt
 /React/ps-react-java/node_modules
+/Java/PS-React-Java/src/main/resources/application.properties
 .metadata
 *.png
 

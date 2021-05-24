@@ -86,6 +86,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://(link_do_seu_data_base)/(nome_do_data_base_criado_anteriormente)
 spring.datasource.username=(seu_user)
 spring.datasource.password=(sua_senha)
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
   # Abra a classe (Application.java):
   ( src/main/java -> br.com.supera.game.store -> Application.java )
@@ -141,6 +142,17 @@ Finalmente temos o back-end rodando. Para verificar os dados em Json acesse: htt
   
   # Após as dependencias terem sido instaladas:
   $ npm start
+  
+  # Caso você receba o erro abaixo:
+    > ps-react-java@0.1.0 start
+    > react-scripts start
+
+    'react-scripts' não é reconhecido como um comando interno
+    ou externo, um programa operável ou um arquivo em lotes.
+  # Digite o comando:
+  $ npm install react-scripts@2.1.8
+  $ npm start
+  
   ```
 Front End rodando. Acesse: http://localhost:3000/
   
@@ -151,6 +163,7 @@ Front End rodando. Acesse: http://localhost:3000/
   A API possui os seguintes EndPoints:
   
   - http://localhost:8080/produtos (Lista todos os produtos)
+  - http://localhost:8080/produtos?sortBy={requisito_de_ordenamento} (Ordena os produtos pelo requisito passado, ex: "name", "score", "price")
   - http://localhost:8080/produtos/carrinho (Lista todos os produtos dentro do carrinho)
   - http://localhost:8080/produtos/carrinho/size (Retorna a quantidade de itens dentro do carrinho)
   - http://localhost:8080/comprar/{id} (Adicina um produto ao carrinho)
@@ -158,6 +171,7 @@ Front End rodando. Acesse: http://localhost:3000/
   - http://localhost:8080/carrinho/total-frete (Retorna o valor total do frete dos produtos)
   - http://localhost:8080/carrinho/finalizar-compra (Recebe os parametros do formulário do FrontEnd com os dados do usuário (Nome, CPF, cartão de crédito...) e os salva junto do carrinho no banco de dados.
   - http://localhost:8080/carrinho/remover/{id} (Remove produtos com o mesmo ID do carrinho)
+ 
   
   
   ### Tecnologias:
